@@ -55,7 +55,7 @@ program
                 }
               ])
               .then(answers => {
-                let filename = path.resolve(__dirname,`../${projectName}/package.json`)
+                let filename = `${projectName}/package.json`
                 let data = fs.readFileSync(filename,'utf8')
                 let result = Handlebars.compile(data)(answers)
                 fs.writeFileSync(filename,result,'utf8')
